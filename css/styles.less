@@ -7,35 +7,42 @@ html, body {
     padding: 0;
     width: 100%;
     height: 100%;
+    background:#ffeaa7;
 }
 
 #root {
     width: 100%;
     height: 100%;
     display: flex;
-    overflow: hidden;
     flex-direction: column;
-    background:#ffeaa7;
-
-    #clouds {
-        background: url("../assets/kisspng-cartoon-blue-cloud-drawing-cartoon-blue-clouds-5aa3209869f248.640405401520640152434.png") repeat-x 0 0;
-        position: relative;
-        background-size: 60%;
-        width: 100vw;
-        height: 50%;
-        animation: movingClouds 100s linear infinite;
-        -webkit-animation: movingClouds 100s linear infinite;
-
-        @keyframes movingClouds {
-            from {
-                background-position: 0 0;
-            } to {
-                background-position: -20000px 0;
-            }
+    justify-content: flex-end;
+    background: url('../assets/kisspng-3d-modeling-3d-computer-graphics-animation-city-model-5aab7ccc742c23.9823967015211880444759.png') repeat-x;
+    
+    animation: movingClouds 150s linear infinite;
+    -webkit-animation: movingClouds 150s linear infinite;
+    
+    @keyframes movingClouds {
+        from {
+            background-position: 0 0;
+        } to {
+            background-position: -24000px 0;
         }
     }
-
-    #world {
-        height: 100%;
+    
+    @-webkit-keyframes movingClouds {
+        from {
+            background-position: 0 0;
+        } to {
+            background-position: -24000px 0;
+        }
+    }
+    
+    #riding-bike {
+        width: 30%;
+        
+        img {
+            width: 100%;
+            bottom: 0;
+        }
     }
 }
