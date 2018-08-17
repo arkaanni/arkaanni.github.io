@@ -8,7 +8,6 @@ html, body {
     width: 100%;
     height: 100%;
     background:#ffeaa7;
-    // margin-bottom: 10%;
 }
 
 #root {
@@ -34,24 +33,13 @@ html, body {
         }
     }
 
-    .moving {
-        
-    }
-
-    .not-moving {
-        animation-play-state: running;
-        -moz-animation-play-state: running;
-        -webkit-animation-play-state: running;
-        -o-animation-play-state: running;
-    }
-
     #city {
         flex: 0 0 100%;
         width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        background: url('../assets/kisspng-3d-modeling-3d-computer-graphics-animation-city-model-5aab7ccc742c23.9823967015211880444759.png') repeat-x;
+        background: url('../assets/kisspng-3d-modeling-3d-computer-graphics-animation-city-model-5aab7ccc742c23.9823967015211880444759.png') repeat-x 0 0;
         animation: movingClouds 10s linear infinite;
         -webkit-animation: movingClouds 10s linear infinite;
         -moz-animation: movingClouds 10s linear infinite;
@@ -79,9 +67,23 @@ html, body {
             flex: 0 1 100%;
         }
     }
+
+    @media screen and (max-height: 642px) {
+        #city {
+            flex: 1;
+            background-size: 200vh;
+            background-position: center;
+            
+            #riding-bike {
+
+                img {
+                    width: 200px;
+                }
+            }
+        }
+    }
     
     #playlist {
-        // flex: 1 0 20%;
         width: 100%;
     }
 }
