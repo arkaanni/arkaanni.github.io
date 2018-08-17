@@ -22,7 +22,7 @@ html, body {
         from {
             background-position: 0 0;
         } to {
-            background-position: -24000px 0;
+            background-position: -1686px 0;
         }
     }
     
@@ -30,8 +30,19 @@ html, body {
         from {
             background-position: 0 0;
         } to {
-            background-position: -24000px 0;
+            background-position: -1686px 0;
         }
+    }
+
+    .moving {
+        
+    }
+
+    .not-moving {
+        animation-play-state: running;
+        -moz-animation-play-state: running;
+        -webkit-animation-play-state: running;
+        -o-animation-play-state: running;
     }
 
     #city {
@@ -41,8 +52,14 @@ html, body {
         flex-direction: column;
         justify-content: flex-end;
         background: url('../assets/kisspng-3d-modeling-3d-computer-graphics-animation-city-model-5aab7ccc742c23.9823967015211880444759.png') repeat-x;
-        animation: movingClouds 150s linear infinite;
-        -webkit-animation: movingClouds 150s linear infinite;
+        animation: movingClouds 10s linear infinite;
+        -webkit-animation: movingClouds 10s linear infinite;
+        -moz-animation: movingClouds 10s linear infinite;
+        -o-animation: movingClouds 10s linear infinite;
+        animation-play-state: paused;
+        -moz-animation-play-state: paused;
+        -webkit-animation-play-state: paused;
+        -o-animation-play-state: paused;
         
         #riding-bike {
             bottom: 0;
