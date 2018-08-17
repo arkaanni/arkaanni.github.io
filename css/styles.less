@@ -6,7 +6,7 @@ html, body {
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background:#ffeaa7;
     // margin-bottom: 10%;
 }
@@ -35,27 +35,36 @@ html, body {
     }
 
     #city {
-        // flex: 1 0 70%;
+        flex: 0 0 100%;
         width: 100%;
-        height: 100%;
-        background: url('../assets/kisspng-3d-modeling-3d-computer-graphics-animation-city-model-5aab7ccc742c23.9823967015211880444759.png') repeat-x 0 0;
-        animation: movingClouds 150s linear infinite;
-        -webkit-animation: movingClouds 150s linear infinite;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-
+        background: url('../assets/kisspng-3d-modeling-3d-computer-graphics-animation-city-model-5aab7ccc742c23.9823967015211880444759.png') repeat-x;
+        animation: movingClouds 150s linear infinite;
+        -webkit-animation: movingClouds 150s linear infinite;
+        
         #riding-bike {
-            width: 400px;
             bottom: 0;
+            flex: 0 1 30%;
+            display: flex;
+            justify-content: flex-start;
+
             img {
-                width: 100%;
-                // margin-bottom: 10%;
+                width: 300px;
+                height: 100%;
             }
         }
     }
 
+    @media screen and (min-height: 768px) {
+        #city {
+            flex: 0 1 100%;
+        }
+    }
+    
     #playlist {
+        // flex: 1 0 20%;
         width: 100%;
     }
 }
