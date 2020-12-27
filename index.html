@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124243777-1"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-      gtag('config', 'UA-124243777-1');
+        gtag('config', 'UA-124243777-1');
     </script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Go Further</title>
-    
+
     <link rel="stylesheet/less" type="text/css" href="css/styles.less" />
-    
+
 </head>
+
 <body>
     <div id="root">
         <div id="city">
@@ -26,42 +28,49 @@
                 <img src="assets/couple-3210678_640.png">
             </div>
         </div>
-        
+
         <div id="playlist">
-                <iframe id="muzik" width="100%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/474224724&color=%235375ae&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&buying=false&sharing=false"></iframe>
+            <iframe id="muzik" width="100%" height="100" scrolling="no" frameborder="no" allow="autoplay"
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/474224724&color=%235375ae&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&buying=false&sharing=false"></iframe>
         </div>
     </div>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.7.1/less.min.js" ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.7.1/less.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://w.soundcloud.com/player/api.js"></script>
 
     <script type="text/javascript">
-        $(function() {
+        $(function () {
             var scIframe = document.getElementById('muzik')
             var scWidget = SC.Widget(scIframe)
             var city = $('#city')
-            
-            scWidget.bind(SC.Widget.Events.READY, function() {
-                scWidget.bind(SC.Widget.Events.PLAY, function() {
-                    city.css({
-                        'animation-play-state': 'running',
-                        '-webkit-animation-play-state': 'running',
-                        '-moz-animation-play-state': 'running',
-                        '-o-animation-play-state': 'running'
-                    })
-                })
 
-                scWidget.bind(SC.Widget.Events.PAUSE, function() {
-                    city.css({
-                        'animation-play-state': 'paused',
-                        '-webkit-animation-play-state': 'paused',
-                        '-moz-animation-play-state': 'paused',
-                        '-o-animation-play-state': 'paused'
-                    })
-                })
+            // bind the play or pause song button
+            scWidget.bind(SC.Widget.Events.READY, function () {
+                playAnimation();
+                scWidget.bind(SC.Widget.Events.PLAY, playAnimation)
+                scWidget.bind(SC.Widget.Events.PAUSE, stopAnimation)
             })
+
+            function playAnimation() {
+                city.css({
+                    'animation-play-state': 'running',
+                    '-webkit-animation-play-state': 'running',
+                    '-moz-animation-play-state': 'running',
+                    '-o-animation-play-state': 'running'
+                })
+            }
+
+            function stopAnimation() {
+                city.css({
+                    'animation-play-state': 'paused',
+                    '-webkit-animation-play-state': 'paused',
+                    '-moz-animation-play-state': 'paused',
+                    '-o-animation-play-state': 'paused'
+                })
+            }
         })
     </script>
 </body>
+
 </html>
