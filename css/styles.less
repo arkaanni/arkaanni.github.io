@@ -3,6 +3,7 @@
 }
 
 html, body {
+    font-family: Helvetica, Arial;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -18,12 +19,13 @@ html, body {
     justify-content: flex-end;
 
     #city {
-        flex: 0 0 100%;
+        flex: 0 1 100%;
         width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
         background: url('../assets/kisspng-3d-modeling-3d-computer-graphics-animation-city-model-5aab7ccc742c23.9823967015211880444759.png') repeat-x 0 0;
+        background-size: 1686px 70vh;
         animation: movingCity 14s linear infinite;
         -webkit-animation: movingCity 14s linear infinite;
         -moz-animation: movingCity 14s linear infinite;
@@ -34,15 +36,14 @@ html, body {
         -o-animation-play-state: paused;
         
         #riding-bike {
-            bottom: 0;
-            flex: 0 1 30%;
+            flex: 0 0 30%;
             display: flex;
-            justify-content: flex-start;
+            flex-direction: column;
+            align-items: flex-start;
             margin-bottom: -24px;
 
             img {
-                width: 300px;
-                height: 100%;
+                margin-left: -24px;
             }
         }
 
@@ -78,60 +79,51 @@ html, body {
             }
         }
     }
-
-    @media screen and (min-height: 768px) {
+    
+    @media (min-width: 320px) and (max-height: 642px) {
         #city {
-            flex: 0 1 100%;
+            #riding-bike {
+                img {
+                    width: 130px;
+                    height: 130px;
+                }
+            }
         }
     }
 
-    @media screen and (max-height: 642px) {
+    @media (min-height: 644px) and (max-height: 960px) and (min-width: 362px) {
         #city {
-            flex: 1;
-            background-size: 1200px 70vh;
-            background-position: center;
-            
             #riding-bike {
-
                 img {
                     width: 200px;
-                }
-            }
-
-            @keyframes movingCity {
-                from {
-                    background-position: 0 0;
-                } to {
-                    background-position: -1200px 0;
-                }
-            }
-            
-            @-webkit-keyframes movingCity {
-                from {
-                    background-position: 0 0;
-                } to {
-                    background-position: -1200px 0;
-                }
-            }
-        
-            @-moz-keyframes movingCity {
-                from {
-                    background-position: 0 0;
-                } to {
-                    background-position: -1200px 0;
-                }
-            }
-        
-            @-o-keyframes movingCity {
-                from {
-                    background-position: 0 0;
-                } to {
-                    background-position: -1200px 0;
+                    height: 200px;
                 }
             }
         }
     }
-    
+
+    @media (min-height: 962px) and (max-height: 1200px) {
+        #city {
+            #riding-bike {
+                img {
+                    width: 300px;
+                    height: 300px;
+                }
+            }
+        }
+    }
+
+    @media (min-height: 1026px) and (max-height: 1600px) {
+        #city {
+            #riding-bike {
+                img {
+                    width: 400px;
+                    height: 400px;
+                }
+            }
+        }
+    }
+
     #playlist {
         width: 100%;
     }
